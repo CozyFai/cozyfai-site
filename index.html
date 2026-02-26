@@ -33,9 +33,9 @@
       align-items: center;
       justify-content: space-between;
       gap: 40px;
-      padding: 30px 0 60px 0;
+      padding: 10px 0 40px 0; /* más compacto arriba */
     }
-
+    
     .hero-image {
       flex: 1;
     }
@@ -48,11 +48,12 @@
     .hero-text {
       flex: 1;
     }
-
+    
     .hero-text h1 {
       font-size: 34px;
       margin-top: 0;
       margin-bottom: 20px;
+      line-height: 1.2;
     }
 
     .hero-text p {
@@ -61,6 +62,10 @@
       line-height: 1.6;
     }
 
+    .hero-text h1 span {
+      font-size: 26px;
+      font-weight: 500;
+    }
     /* FORM */
     .form-box {
       display: flex;
@@ -101,6 +106,18 @@
       line-height: 1.8;
     }
 
+    .site-header {
+      text-align: center;
+      padding: 8px 0 5px 0; /* mucho más compacto */
+    }
+
+    .logo {
+      height: 38px;   /* ajusta tamaño del logo */
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    
     .preview img {
       max-width: 300px;
       margin-top: 30px;
@@ -131,9 +148,9 @@
 </head>
 <body>
 
-  <header>
-    CozyFai
-  </header>
+<header class="site-header">
+  <img src="assets/logo.png" alt="CozyFai logo" class="logo">
+</header>
 
   <div class="container">
 
@@ -145,7 +162,10 @@
       </div>
 
       <div class="hero-text">
-        <h1>Cozy Coloring Page – Free Sample</h1>
+        <h1>
+          Cozy Coloring Page <br>
+          <span>Free Sample</span>
+        </h1>
         <p>Relaxing printable cozy illustration to unwind, relax and enjoy.</p>
 
         <form class="form-box">
