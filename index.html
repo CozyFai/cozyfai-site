@@ -19,96 +19,114 @@
       margin: auto;
     }
 
+    /* HEADER */
     header {
-      padding: 10px 0;
       text-align: center;
+      padding: 15px 0;
+      font-size: 22px;
       font-weight: bold;
-      font-size: 20px;
     }
 
+    /* HERO SECTION */
     .hero {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 0;
+      gap: 40px;
+      padding: 30px 0 60px 0;
+    }
+
+    .hero-image {
+      flex: 1;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 20px;
     }
 
     .hero-text {
-      flex: 1 1 300px;        
-      text-align: center;
+      flex: 1;
     }
 
     .hero-text h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+      font-size: 34px;
+      margin-top: 0;
+      margin-bottom: 20px;
     }
 
     .hero-text p {
       font-size: 18px;
       margin-bottom: 30px;
+      line-height: 1.6;
     }
 
+    /* FORM */
     .form-box {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 350px;
     }
 
     .form-box input {
-      padding: 12px;
-      flex: 1;
-      min-width: 200px;
-      border-radius: 8px;
+      padding: 14px;
+      border-radius: 10px;
       border: 1px solid #ccc;
+      font-size: 15px;
     }
 
     .form-box button {
-      padding: 12px 20px;
-      border-radius: 8px;
+      padding: 14px;
+      border-radius: 12px;
       border: none;
-      background-color: #2bbf9b;
+      background-color: #1f9e84;
       color: white;
       font-weight: bold;
+      font-size: 16px;
       cursor: pointer;
     }
 
-    .hero img {
-      flex: 1 1 450px;
-      max-width: 100%;
-      border-radius: 20px;
+    /* WHAT YOU'LL GET */
+    .section {
+      text-align: center;
+      padding: 60px 0;
     }
 
-    .section {
-      padding: 60px 0;
-      text-align: center;
+    .section h2 {
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      line-height: 1.8;
     }
 
     .preview img {
       max-width: 300px;
+      margin-top: 30px;
       border-radius: 20px;
-      margin-top: 20px;
     }
 
     footer {
-      padding: 30px 0;
       text-align: center;
-      font-size: 14px;
+      padding: 30px 0;
       background-color: #eee2d3;
       margin-top: 60px;
+      font-size: 14px;
     }
 
-    @media (max-width: 768px) {
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
       .hero {
         flex-direction: column;
         text-align: center;
       }
 
       .form-box {
-        justify-content: center;
+        margin: auto;
       }
     }
+
   </style>
 </head>
 <body>
@@ -119,7 +137,13 @@
 
   <div class="container">
 
+    <!-- HERO -->
     <section class="hero">
+
+      <div class="hero-image">
+        <img src="assets/mockup.jpg" alt="Cozy Coloring Page Preview">
+      </div>
+
       <div class="hero-text">
         <h1>Cozy Coloring Page – Free Sample</h1>
         <p>Relaxing printable cozy illustration to unwind, relax and enjoy.</p>
@@ -130,16 +154,22 @@
         </form>
       </div>
 
-      <img src="assets/mockup.jpg" alt="Cozy Coloring Page Preview">
     </section>
 
-    <section class="section preview">
+    <!-- WHAT YOU'LL GET -->
+    <section class="section">
       <h2>What You'll Get</h2>
-      <p>✔ High resolution printable PDF<br>
-         ✔ Cozy aesthetic lineart<br>
-         ✔ Instant download via email</p>
+      <p>
+        ✔ High resolution printable PDF<br>
+        ✔ Cozy aesthetic lineart<br>
+        ✔ Instant download via email
+      </p>
+    </section>
 
-      <img src="assets/preview1.jpg" alt="Preview of coloring page">
+    <!-- PREVIEW -->
+    <section class="section preview">
+      <h2>Preview of coloring page</h2>
+      <img src="assets/preview1.jpg" alt="Coloring page preview">
     </section>
 
   </div>
