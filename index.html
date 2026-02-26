@@ -43,6 +43,7 @@
     .hero-image img {
       width: 85%;
       border-radius: 20px;     
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     .hero-text {
@@ -60,6 +61,7 @@
       font-size: 18px;
       margin-bottom: 30px;
       line-height: 1.6;
+      max-width: 420px;
     }
 
     .hero-text h1 span {
@@ -83,16 +85,20 @@
     }
 
     .form-box button {
-      padding: 14px;
-      border-radius: 12px;
+      padding: 16px;
+      border-radius: 14px;
       border: none;
       background-color: #1f9e84;
       color: white;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 17px;
       cursor: pointer;
     }
-
+    
+    .form-box button:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
     /* WHAT YOU'LL GET */
     .section {
       text-align: center;
