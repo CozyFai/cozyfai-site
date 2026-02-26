@@ -30,10 +30,12 @@ body {
 
 .logo {
   height: 22px;
-  width: auto;
 }
 
-/* HERO */
+/* =========================
+   HERO (2 columnas)
+========================= */
+
 .hero {
   display: flex;
   align-items: center;
@@ -46,12 +48,6 @@ body {
   flex: 1;
 }
 
-.benefits {
-  margin: 0 0 28px 18px;
-  line-height: 1.9;
-  font-size: 16px;
-}
-  
 .hero-image img {
   width: 85%;
   border-radius: 20px;
@@ -64,22 +60,20 @@ body {
 
 .hero-text h1 {
   font-size: 36px;
-  line-height: 1.15;
   margin: 0 0 18px 0;
+  line-height: 1.15;
 }
 
 .hero-text h1 span {
   display: block;
   font-size: 24px;
-  font-weight: 500;
   opacity: 0.8;
   margin-top: 6px;
 }
 
 .hero-text p {
   font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   max-width: 420px;
 }
 
@@ -95,7 +89,6 @@ body {
   padding: 14px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  font-size: 15px;
 }
 
 .form-box button {
@@ -105,17 +98,17 @@ body {
   background-color: #1f9e84;
   color: white;
   font-weight: bold;
-  font-size: 17px;
   cursor: pointer;
-  transition: 0.15s;
 }
 
 .form-box button:hover {
   transform: translateY(-2px);
-  opacity: 0.95;
 }
 
-/* FEATURES (2 columnas nuevas) */
+/* =========================
+   FEATURES (2 columnas)
+========================= */
+
 .features {
   display: flex;
   align-items: center;
@@ -126,14 +119,13 @@ body {
 
 .features-text {
   flex: 1;
-  text-align: left;
 }
 
 .features-text h2 {
   margin-bottom: 18px;
 }
 
-.features-text ul {
+.benefits {
   padding-left: 18px;
   line-height: 1.9;
 }
@@ -155,30 +147,22 @@ footer {
   padding: 30px 0;
   background-color: #eee2d3;
   margin-top: 60px;
-  font-size: 14px;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 900px) {
 
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
+  .hero,
   .features {
     flex-direction: column;
     text-align: center;
-    gap: 30px;
   }
 
   .form-box {
     margin: auto;
-  }
-
-  .hero-text p {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 </style>
@@ -207,22 +191,31 @@ footer {
 
       <p>Relaxing printable cozy illustration to unwind, relax and enjoy.</p>
 
-      <ul class="benefits">
-      <li>High resolution printable PDF</li>
-      <li>Cozy aesthetic lineart</li>
-      <li>Instant download via email</li>
-      </ul>    
-
       <form class="form-box">
         <input type="email" placeholder="Enter your email" required>
         <button type="submit">Get it FREE</button>
       </form>
     </div>
 
-    <section class="section preview">
-      <h2>Preview of coloring page</h2>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+
+    <div class="features-text">
+      <h2>What You'll Get</h2>
+      <ul class="benefits">
+        <li>High resolution printable PDF</li>
+        <li>Cozy aesthetic lineart</li>
+        <li>Instant download via email</li>
+      </ul>
+    </div>
+
+    <div class="features-image">
       <img src="assets/preview1.jpg" alt="Coloring page preview">
-    </section>
+    </div>
+
+  </section>
 
 </div>
 
