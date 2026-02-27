@@ -151,16 +151,21 @@ body {
 .features {
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .features-image img {
-  max-width: 320px;
-  border-radius: 20px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
-
+.preview-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
 /* =========================
    FOOTER
 ========================= */
@@ -259,8 +264,12 @@ footer {
 
   <!-- PREVIEW -->
   <section class="features">
+    <h2 class="preview-title">
+      See what you'll be coloring
+    </h2>
+  
     <div class="features-image">
-      <img src="assets/preview1.jpg" alt="Coloring page preview">
+      <img src="assets/freebie-preview.jpg" alt="Printable cozy coloring page preview">
     </div>
   </section>
 
