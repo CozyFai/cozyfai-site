@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're in ✨ | CozyFai</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5efe6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .thankyou-card {
+      background: #ffffff;
+      padding: 60px 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .thankyou-card h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #3e3e3e;
+    }
+
+    .thankyou-card p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #c97c5d;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #b86d50;
+      transform: translateY(-2px);
+    }
+
+    .small-text {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #999;
+    }
+
+    @media (max-width: 500px) {
+      .thankyou-card {
+        padding: 40px 25px;
+      }
+
+      .thankyou-card h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="thankyou-card">
+    <h1>You're in ✨</h1>
+
+    <p>
+      Your Cozy Coloring Page is ready.
+      Take a deep breath, grab your favorite drink,
+      and enjoy a relaxing moment.
+    </p>
+
+    <a href="/assets/cozy-coloring-page.pdf"
+       class="download-btn"
+       download>
+       Download Your Free Sample
+    </a>
+
+    <p class="small-text">
+      We've also sent a copy to your email 🌿
+    </p>
+  </div>
+
+</body>
+</html>
