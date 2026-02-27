@@ -32,6 +32,7 @@ body {
   height: 22px;
 }
 
+
 /* =========================
    HERO (2 columnas)
 ========================= */
@@ -58,6 +59,9 @@ body {
   flex: 1;
 }
 
+
+/* TITULOS */
+
 .hero-text h1 {
   font-size: 36px;
   margin: 0 0 18px 0;
@@ -71,17 +75,43 @@ body {
   margin-top: 6px;
 }
 
-.hero-text p {
-  font-size: 18px;
-  margin-bottom: 28px;
+
+/* =========================
+   CTA BLOCK (agrupa TODO)
+========================= */
+
+.cta-block {
   max-width: 420px;
 }
 
-/* FORM */
+/* descripción */
+.cta-block p {
+  font-size: 18px;
+  margin: 0 0 14px 0;
+}
+
+/* título beneficios */
+.benefits-title {
+  font-weight: 600;
+  margin: 6px 0 6px 0;
+}
+
+/* lista */
+.benefits {
+  margin: 0 0 16px 18px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
 .form-box {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+  margin-top: 6px;
   max-width: 350px;
 }
 
@@ -89,6 +119,7 @@ body {
   padding: 14px;
   border-radius: 10px;
   border: 1px solid #ccc;
+  font-size: 15px;
 }
 
 .form-box button {
@@ -98,41 +129,25 @@ body {
   background-color: #1f9e84;
   color: white;
   font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
+  transition: 0.15s;
 }
 
 .form-box button:hover {
   transform: translateY(-2px);
+  opacity: 0.95;
 }
 
+
 /* =========================
-   FEATURES (2 columnas)
+   FEATURES (preview abajo)
 ========================= */
 
 .features {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
+  justify-content: center;
   padding: 40px 0;
-}
-
-.features-text {
-  flex: 1;
-}
-
-.features-text h2 {
-  margin-bottom: 18px;
-}
-
-.benefits {
-  padding-left: 18px;
-  line-height: 1.9;
-}
-
-.features-image {
-  flex: 1;
-  text-align: center;
 }
 
 .features-image img {
@@ -141,22 +156,19 @@ body {
   box-shadow: 0 8px 22px rgba(0,0,0,0.08);
 }
 
-.benefits-title {
-  font-weight: 600;
-  margin: 18px 0 8px 0;
-}
 
-.benefits {
-  margin: 0 0 26px 18px;
-  line-height: 1.9;
-}
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
+
 footer {
   text-align: center;
   padding: 30px 0;
   background-color: #eee2d3;
   margin-top: 60px;
+  font-size: 14px;
 }
+
 
 /* =========================
    RESPONSIVE
@@ -164,24 +176,29 @@ footer {
 
 @media (max-width: 900px) {
 
-  .hero,
-  .features {
+  .hero {
     flex-direction: column;
     text-align: center;
   }
 
-  .form-box {
+  .cta-block {
     margin: auto;
+  }
+
+  .form-box {
+    margin: 10px auto 0;
   }
 }
 </style>
 </head>
+
 
 <body>
 
 <header class="site-header">
   <img src="assets/logo.png" alt="CozyFai logo" class="logo">
 </header>
+
 
 <div class="container">
 
@@ -192,31 +209,41 @@ footer {
       <img src="assets/mockup-freebie1-jpg.jpg" alt="Cozy Coloring Page Preview">
     </div>
 
+
     <div class="hero-text">
+
       <h1>
         Cozy Coloring Page
         <span>Free Sample</span>
       </h1>
 
-<p>Relaxing printable cozy illustration to unwind, relax and enjoy.</p>
+      <div class="cta-block">
 
-<p class="benefits-title">What you'll get:</p>
+        <p>
+          Relaxing printable cozy illustration to unwind, relax and enjoy.
+        </p>
 
-<ul class="benefits">
-  <li>High resolution printable PDF</li>
-  <li>Cozy aesthetic lineart</li>
-  <li>Instant download via email</li>
-</ul>
+        <p class="benefits-title">What you'll get:</p>
 
-      <form class="form-box">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Get it FREE</button>
-      </form>
+        <ul class="benefits">
+          <li>High resolution printable PDF</li>
+          <li>Cozy aesthetic lineart</li>
+          <li>Instant download via email</li>
+        </ul>
+
+        <form class="form-box">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Get it FREE</button>
+        </form>
+
+      </div>
+
     </div>
 
   </section>
 
-  <!-- FEATURES -->
+
+  <!-- PREVIEW -->
   <section class="features">
     <div class="features-image">
       <img src="assets/preview1.jpg" alt="Coloring page preview">
@@ -224,6 +251,7 @@ footer {
   </section>
 
 </div>
+
 
 <footer>
   © 2026 CozyFai – Relax • Unwind • Enjoy
