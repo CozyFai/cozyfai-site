@@ -39,7 +39,7 @@ body {
 
 .hero {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
   padding: 20px 0 40px 0;
@@ -50,9 +50,10 @@ body {
 }
 
 .hero-image img {
-  width: 85%;
+  width: 100%;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  flex: 1.1;
 }
 
 .hero-text {
@@ -100,8 +101,9 @@ body {
 .benefits {
   margin: 0 0 16px 18px;
   line-height: 1.8;
+  margin-left: 0;
+  padding-left: 18px;  
 }
-
 
 /* =========================
    FORM
@@ -181,6 +183,11 @@ footer {
     text-align: center;
   }
 
+   .benefits {
+    text-align: left;      /* 🔥 fuerza alineación izquierda */
+    display: inline-block; /* evita que ocupe 100% centrado */
+    }
+  
   .cta-block {
     margin: auto;
   }
