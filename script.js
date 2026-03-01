@@ -15,10 +15,8 @@ document.querySelector("form").addEventListener("submit", async function(e) {
     const data = await response.json();
 
     if (data.success) {
-
-      // ✅ NUEVO (reemplaza query param)
-      sessionStorage.setItem("fromLanding", "true");
-      window.location.replace("/thank-you.html");
+      
+      window.location.replace("/thank-you.html?from=landing");
 
     } else {
       alert("Something went wrong. Please try again.");
