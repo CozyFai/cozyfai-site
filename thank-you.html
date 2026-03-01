@@ -118,10 +118,10 @@
 
 <body>
   <script>
-    if (!sessionStorage.getItem("fromLanding")) {
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get("from") !== "landing") {
       window.location.href = "/";
-    } else {
-      sessionStorage.removeItem("fromLanding");
     }
   </script>
 
