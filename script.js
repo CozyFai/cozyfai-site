@@ -15,7 +15,13 @@ document.querySelector("form").addEventListener("submit", async function(e) {
     const data = await response.json();
 
     if (data.success) {
+
+      // ✅ FLAG DE ACCESO (AQUÍ VA)
+      sessionStorage.setItem("fromLanding", "true");
+
+      // redirección normal
       window.location.href = "/thank-you.html";
+
     } else {
       alert("Something went wrong. Please try again.");
     }
