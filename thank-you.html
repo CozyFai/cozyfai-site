@@ -152,17 +152,22 @@
     <script>
       function validateAccess() {
         const params = new URLSearchParams(window.location.search);
+      
         if (params.get("from") !== "landing") {
           window.location.replace("/");
+          return;
         }
+      
+        // 👇 CLAVE: borrar el parámetro del historial
+        window.history.replaceState({}, "", "/thank-you.html");
       }
       
       validateAccess();
       
       window.addEventListener("pageshow", function (event) {
         if (event.persisted) validateAccess();
-      });    
-  </script>
+      });
+    </script>
 
   <div class="thankyou-card">
 
