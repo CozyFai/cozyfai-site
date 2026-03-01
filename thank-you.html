@@ -93,8 +93,15 @@
       object-fit: cover;
       box-shadow: 0 8px 18px rgba(0,0,0,0.08);
       border: 2px solid #e6e3df;
+      cursor: zoom-in;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-
+    
+    .preview-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    
     .pack-btn {
       display: inline-block;
       padding: 13px 26px;
@@ -176,5 +183,38 @@
     </div>
 
   </div>
+  <script>
+  document.querySelectorAll('.preview-grid img').forEach(img => {
+    img.addEventListener('click', () => {
+      const overlay = document.createElement('div');
+
+      overlay.style = `
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        cursor: zoom-out;
+        padding: 20px;
+      `;
+
+      const big = document.createElement('img');
+      big.src = img.src;
+      big.style = `
+        max-width: 95%;
+        max-height: 95%;
+        border-radius: 14px;
+        box-shadow: 0 20px 40px rgba(0,0,0,.4);
+      `;
+
+      overlay.appendChild(big);
+      document.body.appendChild(overlay);
+
+      overlay.onclick = () => overlay.remove();
+    });
+  });
+</script>
 </body>
 </html>
