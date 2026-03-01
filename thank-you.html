@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>You're in ✨ | CozyFai</title>
-  <link rel="stylesheet" href="style.css">
-  
+  <link rel="stylesheet" href="style.css" />
+
   <style>
     body {
       margin: 0;
@@ -14,7 +14,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 30px 0;
     }
 
     .thankyou-card {
@@ -23,17 +24,17 @@
       border-radius: 16px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.08);
       text-align: center;
-      max-width: 500px;
-      width: 90%;
+      max-width: 560px;
+      width: 92%;
     }
 
-    .thankyou-card h1 {
+    h1 {
       font-size: 32px;
       margin-bottom: 20px;
       color: #3e3e3e;
     }
 
-    .thankyou-card p {
+    p {
       color: #666;
       font-size: 16px;
       line-height: 1.6;
@@ -48,40 +49,84 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: 600;
-      transition: all 0.3s ease;
+      transition: 0.3s;
+      margin-bottom: 20px;
     }
 
     .download-btn:hover {
-      opacity: 0.95;
       transform: translateY(-2px);
+      opacity: 0.95;
     }
 
     .small-text {
-      margin-top: 25px;
+      margin-top: 10px;
       font-size: 13px;
       color: #999;
     }
 
-    @media (max-width: 500px) {
-      .thankyou-card {
-        padding: 40px 25px;
-      }
+    /* --- UPSELL --- */
 
-      .thankyou-card h1 {
-        font-size: 26px;
+    .upsell {
+      margin-top: 50px;
+      padding-top: 35px;
+      border-top: 1px solid #eee;
+    }
+
+    .upsell h2 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #3e3e3e;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 20px 0 25px;
+    }
+
+    .preview-grid img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .pack-btn {
+      display: inline-block;
+      padding: 13px 26px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .pack-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    @media (max-width: 500px) {
+      .preview-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
 </head>
+
 <body>
   <script>
-  if (!sessionStorage.getItem("fromLanding")) {
-    window.location.href = "/";
-  } else {
-    sessionStorage.removeItem("fromLanding");
-  }
+    if (!sessionStorage.getItem("fromLanding")) {
+      window.location.href = "/";
+    } else {
+      sessionStorage.removeItem("fromLanding");
+    }
   </script>
+
   <div class="thankyou-card">
+
+    <!-- DESCARGA -->
     <h1>You're in ✨</h1>
 
     <p>
@@ -90,16 +135,43 @@
       and enjoy a relaxing moment.
     </p>
 
-    <a href="/assets/cozyfai-coloring-page-free-sample.pdf"
-       class="download-btn"
-       download>
-       Download Your Free Sample
+    <a
+      href="/assets/cozyfai-coloring-page-free-sample.pdf"
+      class="download-btn"
+      download>
+      Download Your Free Sample
     </a>
 
     <p class="small-text">
       We've also sent a copy to your email 🌿
     </p>
-  </div>
 
+
+    <!-- UPSELL -->
+    <div class="upsell">
+      <h2>✨ Want more cozy coloring time?</h2>
+
+      <p>
+        We also created a 6-page printable pack with brand new cozy designs.
+      </p>
+
+      <div class="preview-grid">
+        <!-- reemplazá por tus imágenes reales -->
+        <img src="/assets/preview1.jpg" alt="">
+        <img src="/assets/preview2.jpg" alt="">
+        <img src="/assets/preview3.jpg" alt="">
+        <img src="/assets/preview4.jpg" alt="">
+        <img src="/assets/preview5.jpg" alt="">
+        <img src="/assets/preview6.jpg" alt="">
+      </div>
+
+      <a
+        href="TU_LINK_GUMROAD_O_ETSY_AQUI"
+        class="pack-btn">
+        View the 6-page pack
+      </a>
+    </div>
+
+  </div>
 </body>
 </html>
