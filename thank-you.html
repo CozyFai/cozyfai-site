@@ -235,14 +235,15 @@
   <div class="lightbox" id="lightbox">
   <img id="lightbox-img" src="">
 </div>
-  <script>
+ <script>
   const previews = document.querySelectorAll(".preview-grid img");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
 
   previews.forEach(img => {
     img.addEventListener("click", () => {
-      lightboxImg.src = img.dataset.large;
+      const largeSrc = img.getAttribute("data-large"); // 👈 cambio clave
+      lightboxImg.src = largeSrc;
       lightbox.style.display = "flex";
     });
   });
