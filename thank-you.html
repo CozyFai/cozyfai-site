@@ -74,7 +74,13 @@
   </style>
 </head>
 <body>
-
+  <script>
+  if (!sessionStorage.getItem("fromLanding")) {
+    window.location.href = "/";
+  } else {
+    sessionStorage.removeItem("fromLanding");
+  }
+  </script>
   <div class="thankyou-card">
     <h1>You're in ✨</h1>
 
