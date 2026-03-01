@@ -15,8 +15,10 @@ document.querySelector("form").addEventListener("submit", async function(e) {
     const data = await response.json();
 
     if (data.success) {
-      
-      window.location.replace("/thank-you.html?from=landing");
+
+      // ✅ NUEVO (reemplaza query param)
+      sessionStorage.setItem("fromLanding", "true");
+      window.location.replace("/thank-you.html");
 
     } else {
       alert("Something went wrong. Please try again.");
