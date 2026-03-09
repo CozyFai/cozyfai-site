@@ -13,40 +13,33 @@ body {
   color: #333;
 }
 
-/*CONTAINER*/
 .container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
 }
 
-/* HEADER*/
 .site-header {
   background-color: #e9e0d3;
-  padding: 14px 0;
+  padding: 10px 0; /* Más compacto */
   border-bottom: 1px solid #e2d8c9;
   text-align: center;
 }
 
 .logo {
-  height: 22px;
+  height: 20px;
 }
 
 .hero {
   display: flex;
-  align-items: center; /* Alineación centrada para mejor balance */
+  align-items: center;
   justify-content: space-between;
   gap: 40px;
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
-.hero-text {
-  flex: 1;
-}
-
-.hero-image {
-  flex: 1.1;
-}
+.hero-text { flex: 1; }
+.hero-image { flex: 1.1; }
 
 .hero-image img {
   width: 100%;
@@ -64,47 +57,42 @@ body {
 .hero-text h1 span {
   display: block;
   font-size: 26px;
-  color: #1f9e84; /* Color de énfasis en el beneficio gratis */
+  color: #1f9e84;
   margin-top: 5px;
 }
 
-.cta-block {
-  max-width: 420px;
-}
+.cta-block { max-width: 420px; }
 
 .cta-block p {
   font-size: 18px;
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
   line-height: 1.5;
 }
 
-.benefits-title {
-  font-weight: 600;
-  margin-bottom: 8px;
-}
+.benefits-title { font-weight: 600; margin-bottom: 5px; }
 
 .benefits {
-  margin: 0 0 25px 0;
+  margin: 0 0 20px 0;
   padding-left: 20px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .form-box {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   max-width: 380px;
 }
 
 .form-box input {
-  padding: 16px;
+  padding: 15px;
   border-radius: 12px;
   border: 1px solid #ddd;
   font-size: 16px;
 }
 
 .form-box button {
-  padding: 18px;
+  padding: 16px;
   border-radius: 12px;
   border: none;
   background-color: #1f9e84;
@@ -115,61 +103,76 @@ body {
   transition: 0.2s;
 }
 
-.form-box button:hover {
-  background-color: #1a8a73;
-  transform: translateY(-2px);
-}
-
-/* SECCIÓN PREVIEW (MOCKUP PINTADO) */
+/* SECCIÓN PREVIEW */
 .preview-section {
   text-align: center;
-  padding: 60px 0;
+  padding: 40px 0;
   background-color: #fffaf5;
   border-radius: 30px;
-  margin-bottom: 40px;
-}
-
-.preview-section h2 {
-  font-size: 32px;
   margin-bottom: 30px;
 }
 
+.preview-section h2 { font-size: 28px; margin-bottom: 20px; }
+
 .preview-image img {
   width: 100%;
-  max-width: 700px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  max-width: 600px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
 footer {
   text-align: center;
-  padding: 30px 0;
+  padding: 25px 0;
   background-color: #eee2d3;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-/* RESPONSIVE OPTIMIZADO PARA PINTEREST BROWSER */
+/* --- OPTIMIZACIÓN EXTREMA PARA MÓVIL (PINTEREST BROWSER) --- */
 @media (max-width: 900px) {
   .hero {
-    flex-direction: column-reverse; /* 🔥 El texto y form quedan ARRIBA del todo */
+    flex-direction: column-reverse; /* Formulario arriba */
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0; /* Menos espacio arriba */
+    gap: 15px;
   }
 
   .hero-text h1 {
-    font-size: 32px;
+    font-size: 28px; /* Reducido para ahorrar altura */
+    margin-bottom: 8px;
+  }
+
+  .hero-text h1 span {
+    font-size: 22px;
+  }
+
+  /* Ocultamos textos descriptivos en móvil para que el botón suba al primer viewport */
+  .cta-block p, .benefits-title, .benefits {
+    display: none; 
   }
 
   .cta-block {
-    margin: auto;
-  }
-
-  .benefits {
-    text-align: left;
-    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .form-box {
+    margin: 0 auto;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .form-box input {
+    padding: 12px; /* Más bajo */
+  }
+
+  .form-box button {
+    padding: 14px; /* Más bajo */
+    font-size: 16px;
+  }
+
+  .hero-image {
+    width: 80%; /* Imagen más pequeña para que no empuje todo hacia abajo */
     margin: 0 auto;
   }
 }
@@ -185,42 +188,37 @@ footer {
 <div class="container">
 
   <section class="hero">
-
     <div class="hero-text">
       <h1>
         Cozy Cat Coloring Page
-        <span>Free Download</span>
+        <span>Free PDF Download</span>
       </h1>
 
       <div class="cta-block">
-        <p>
-          Download your high-quality printable illustration and start relaxing today.
-        </p>
-
+        <p>High resolution printable lineart. Instant delivery to your inbox.</p>
+        
         <p class="benefits-title">Your download includes:</p>
         <ul class="benefits">
           <li>High resolution printable PDF</li>
           <li>Clean aesthetic lineart</li>
-          <li>Instant delivery to your inbox</li>
         </ul>
 
         <form class="form-box">
-          <input type="email" placeholder="Enter your email address" required>
-          <button type="submit">Get it FREE</button>
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">GET IT FREE</button>
         </form>
       </div>
     </div>
 
     <div class="hero-image">
-      <img src="assets/freebie-preview.jpg" alt="Free Cozy Cat Coloring Page Lineart">
+      <img src="assets/freebie-preview.jpg" alt="Free Coloring Page">
     </div>
-
   </section>
 
   <section class="preview-section">
     <h2>See how it looks colored!</h2>
     <div class="preview-image">
-      <img src="assets/mockup-freebie.jpg" alt="Colored cozy cat example">
+      <img src="assets/mockup-freebie.jpg" alt="Colored example">
     </div>
   </section>
 
