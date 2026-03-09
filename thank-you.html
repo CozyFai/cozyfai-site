@@ -7,20 +7,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>You're in ✨ | CozyFai</title>
-  <link rel="stylesheet" href="style.css" />
-
+  
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #f5efe6;
-    
       display: flex;
       justify-content: center;
       align-items: flex-start;
-    
       padding: 24px 0 60px;
-  }
+    }
 
     .thankyou-card {
       background-color: #F4EFE6;
@@ -54,7 +51,7 @@
       border-radius: 8px;
       font-weight: 600;
       transition: 0.3s;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .download-btn:hover {
@@ -63,15 +60,16 @@
     }
 
     .small-text {
-      margin-top: 10px;
+      margin-top: 5px;
       font-size: 13px;
       color: #999;
+      margin-bottom: 20px;
     }
     
     .upsell {
       margin-top: 24px;
-      padding-top: 16px;
-      border-top: 1px solid #eee;
+      padding-top: 24px;
+      border-top: 1px solid #e2d8c9;
     }
 
     .upsell h2 {
@@ -80,14 +78,11 @@
       color: #3e3e3e;
     }
 
-    .upsell p {
-      margin-bottom: 4px;
-    }
     .preview-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-      margin: 14px 0 6px;
+      margin: 14px 0 20px;
     }
 
     .preview-grid img {
@@ -97,13 +92,10 @@
       box-shadow: 0 8px 18px rgba(0,0,0,0.08);
       border: 2px solid #e6e3df;
       cursor: zoom-in;
-      transition: transform .2s ease, box-shadow .2s ease;
+      transition: transform .2s ease;
     }
     
-    .preview-grid img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
+    .preview-grid img:hover { transform: scale(1.03); }
 
     .lightbox {
       position: fixed;
@@ -112,15 +104,10 @@
       display: none;
       justify-content: center;
       align-items: center;
-      padding: 20px;
       z-index: 9999;
     }
     
-    .lightbox img {
-      max-width: 95%;
-      max-height: 95%;
-      border-radius: 12px;
-    }
+    .lightbox img { max-width: 90%; max-height: 90%; border-radius: 12px; }
     
     .pack-btn {
       display: inline-block;
@@ -131,19 +118,10 @@
       border-radius: 8px;
       font-weight: 600;
       transition: 0.3s;
-      margin-top: 18px;
-    }
-
-    .pack-btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
-      box-shadow: 0 10px 18px rgba(0,0,0,0.18);
     }
 
     @media (max-width: 500px) {
-      .preview-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .preview-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -152,39 +130,39 @@
     <script>
       function validateAccess() {
         const params = new URLSearchParams(window.location.search);
-      
         if (params.get("from") !== "landing") {
           window.location.replace("/");
           return;
         }
-      
-        // 👇 CLAVE: borrar el parámetro del historial
         window.history.replaceState({}, "", "/thank-you.html");
       }
       
       validateAccess();
-      
-      window.addEventListener("pageshow", function (event) {
-        if (event.persisted) validateAccess();
+
+      // FUNCIÓN DE DESCARGA AUTOMÁTICA
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const downloadUrl = "/assets/cozyfai-coloring-page-free-sample.pdf";
+          const link = document.createElement('a');
+          link.href = downloadUrl;
+          link.download = "Cozy_Cat_Coloring_Page_CozyFai.pdf"; 
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }, 1500); // 1.5 segundos de delay para asegurar UX
       });
     </script>
 
   <div class="thankyou-card">
-
-    <!-- DESCARGA -->
     <h1>You're in ✨</h1>
 
     <p>
-      Your Cozy Coloring Page is ready.
-      Take a deep breath, grab your favorite drink,
-      and enjoy a relaxing moment.
+      Your coloring page is downloading automatically.<br>
+      Take a deep breath, grab a coffee, and enjoy.
     </p>
 
-    <a
-      href="/assets/cozyfai-coloring-page-free-sample.pdf"
-      class="download-btn"
-      download>
-      Download Your Free Sample
+    <a href="/assets/cozyfai-coloring-page-free-sample.pdf" class="download-btn" download id="manualDownload">
+      Download manually if it didn't start
     </a>
 
     <p class="small-text">
@@ -192,49 +170,45 @@
     </p>
 
     <div class="upsell">
-      <h2>✨ Want more cozy coloring time?</h2>
-      <p>
-        We also created a 6-page printable pack with brand new cozy designs.
-      </p>
+      <h2>✨ Want more cozy designs?</h2>
+      <p>Check out our 6-page printable pack for a full relaxing afternoon.</p>
 
-<div class="preview-grid">
-  <img src="/assets/preview1-small.webp" data-large="/assets/preview1-large.webp" alt="">
-  <img src="/assets/preview2-small.webp" data-large="/assets/preview2-large.webp" alt="">
-  <img src="/assets/preview3-small.webp" data-large="/assets/preview3-large.webp" alt="">
-  <img src="/assets/preview4-small.webp" data-large="/assets/preview4-large.webp" alt="">
-  <img src="/assets/preview5-small.webp" data-large="/assets/preview5-large.webp" alt="">
-  <img src="/assets/preview6-small.webp" data-large="/assets/preview6-large.webp" alt="">
-</div>
+      <div class="preview-grid">
+        <img src="/assets/preview1-small.webp" data-large="/assets/preview1-large.webp" alt="Preview 1">
+        <img src="/assets/preview2-small.webp" data-large="/assets/preview2-large.webp" alt="Preview 2">
+        <img src="/assets/preview3-small.webp" data-large="/assets/preview3-large.webp" alt="Preview 3">
+        <img src="/assets/preview4-small.webp" data-large="/assets/preview4-large.webp" alt="Preview 4">
+        <img src="/assets/preview5-small.webp" data-large="/assets/preview5-large.webp" alt="Preview 5">
+        <img src="/assets/preview6-small.webp" data-large="/assets/preview6-large.webp" alt="Preview 6">
+      </div>
 
-      <a
-        href="https://cozyfai.gumroad.com/l/cozy-home-vibes-coloring-pack"
-        class="pack-btn">
+      <a href="https://cozyfai.gumroad.com/l/cozy-home-vibes-coloring-pack" class="pack-btn">
         View the 6-page pack
       </a>
     </div>
-
   </div>
   
   <div class="lightbox" id="lightbox">
-  <img id="lightbox-img" src="">
-</div>
- <script>
-  const previews = document.querySelectorAll(".preview-grid img");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
+    <img id="lightbox-img" src="">
+  </div>
 
-  previews.forEach(img => {
-    img.addEventListener("click", () => {
-      const largeSrc = img.getAttribute("data-large"); // 👈 cambio clave
-      lightboxImg.src = largeSrc;
-      lightbox.style.display = "flex";
+  <script>
+    const previews = document.querySelectorAll(".preview-grid img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    previews.forEach(img => {
+      img.addEventListener("click", () => {
+        const largeSrc = img.getAttribute("data-large");
+        lightboxImg.src = largeSrc;
+        lightbox.style.display = "flex";
+      });
     });
-  });
 
-  lightbox.addEventListener("click", () => {
-    lightbox.style.display = "none";
-    lightboxImg.src = "";
-  });
-</script>
+    lightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+      lightboxImg.src = "";
+    });
+  </script>
 </body>
 </html>
