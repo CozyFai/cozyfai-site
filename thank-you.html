@@ -9,87 +9,106 @@
   <title>You're in ✨ | CozyFai</title>
   
   <style>
+    /* 1. Mantenemos el estilo de body de la Landing para consistencia */
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5efe6;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 24px 0 60px;
-    }
-
-    .thankyou-card {
-      background-color: #F4EFE6;
-      padding: 20px 40px 30px;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      font-family: Arial, sans-serif; /* 🔥 Cambiado a Sans-serif para coherencia */
+      background-color: #f6efe6;
+      color: #333;
       text-align: center;
-      max-width: 560px;
-      width: 92%;
     }
 
-    h1 {
-      font-size: 32px;
+    /* 2. Integramos el Header idéntico al de la Landing */
+    .site-header {
+      background-color: #e9e0d3;
+      padding: 10px 0;
+      border-bottom: 1px solid #e2d8c9;
       margin-bottom: 20px;
-      color: #3e3e3e;
     }
 
+    .logo {
+      height: 20px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px; /* Más angosto para tipo "tarjeta" */
+      margin: auto;
+      padding-bottom: 60px;
+    }
+
+    /* 3. Compactamos el Título Principal */
+    h1 {
+      font-size: 28px; /* 🔥 Más pequeño y Sans-serif */
+      margin: 0 0 15px 0;
+      color: #2c2c2c;
+    }
+
+    /* 4. Estilos de texto Sans-serif y compactos */
     p {
       color: #666;
       font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 30px;
+      line-height: 1.5;
+      margin: 0 0 25px 0;
+    }
+
+    .p-downloading {
+      font-size: 17px;
+      margin-bottom: 10px;
     }
 
     .download-btn {
       display: inline-block;
       padding: 14px 28px;
-      background-color: #1f9e84;
+      background-color: #1f9e84; /* Mismo color de la Landing */
       color: #fff;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: 600;
+      font-size: 16px;
       transition: 0.3s;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .download-btn:hover {
       transform: translateY(-2px);
-      opacity: 0.95;
+      background-color: #1a8a73;
     }
 
     .small-text {
-      margin-top: 5px;
       font-size: 13px;
       color: #999;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
     
+    /* 5. Sección Upsell Coherente */
     .upsell {
-      margin-top: 24px;
-      padding-top: 24px;
+      margin-top: 30px;
+      padding-top: 25px;
       border-top: 1px solid #e2d8c9;
+      background-color: #fffaf5; /* Fondo suave para destacar */
+      border-radius: 20px;
+      padding: 20px;
     }
 
     .upsell h2 {
       font-size: 22px;
-      margin-bottom: 12px;
-      color: #3e3e3e;
+      margin: 0 0 10px 0;
+      color: #2c2c2c;
     }
 
     .preview-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-      margin: 14px 0 20px;
+      margin: 15px 0 20px 0;
     }
 
     .preview-grid img {
       width: 100%;
       border-radius: 8px;
       object-fit: cover;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.07);
       border: 2px solid #e6e3df;
       cursor: zoom-in;
       transition: transform .2s ease;
@@ -112,22 +131,30 @@
     .pack-btn {
       display: inline-block;
       padding: 13px 26px;
-      background-color: #333;
+      background-color: #333; /* Mismo color que el botón secundario en PC */
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: 600;
+      font-size: 15px;
       transition: 0.3s;
     }
 
     @media (max-width: 500px) {
       .preview-grid { grid-template-columns: repeat(2, 1fr); }
+      h1 { font-size: 24px; }
+      .upsell h2 { font-size: 20px; }
     }
   </style>
 </head>
 
 <body>
+    <header class="site-header">
+      <img src="assets/logo.png" alt="CozyFai logo" class="logo">
+    </header>
+
     <script>
+      /* Mismo script de seguridad y auto-descarga (mantener igual) */
       function validateAccess() {
         const params = new URLSearchParams(window.location.search);
         if (params.get("from") !== "landing") {
@@ -139,7 +166,6 @@
       
       validateAccess();
 
-      // FUNCIÓN DE DESCARGA AUTOMÁTICA
       window.addEventListener('load', function() {
         setTimeout(function() {
           const downloadUrl = "/assets/cozyfai-coloring-page-free-sample.pdf";
@@ -149,42 +175,44 @@
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
-        }, 1500); // 1.5 segundos de delay para asegurar UX
+        }, 1500); 
       });
     </script>
 
-  <div class="thankyou-card">
-    <h1>You're in ✨</h1>
+  <div class="container">
+    <div class="thankyou-card">
+      <h1>You're in ✨</h1>
 
-    <p>
-      Your coloring page is downloading automatically.<br>
-      Take a deep breath, grab a coffee, and enjoy.
-    </p>
+      <p class="p-downloading">
+        Your coloring page is downloading automatically.<br>
+        Take a deep breath and enjoy.
+      </p>
 
-    <a href="/assets/cozyfai-coloring-page-free-sample.pdf" class="download-btn" download id="manualDownload">
-      Download manually if it didn't start
-    </a>
-
-    <p class="small-text">
-      We've also sent a copy to your email 🌿
-    </p>
-
-    <div class="upsell">
-      <h2>✨ Want more cozy designs?</h2>
-      <p>Check out our 6-page printable pack for a full relaxing afternoon.</p>
-
-      <div class="preview-grid">
-        <img src="/assets/preview1-small.webp" data-large="/assets/preview1-large.webp" alt="Preview 1">
-        <img src="/assets/preview2-small.webp" data-large="/assets/preview2-large.webp" alt="Preview 2">
-        <img src="/assets/preview3-small.webp" data-large="/assets/preview3-large.webp" alt="Preview 3">
-        <img src="/assets/preview4-small.webp" data-large="/assets/preview4-large.webp" alt="Preview 4">
-        <img src="/assets/preview5-small.webp" data-large="/assets/preview5-large.webp" alt="Preview 5">
-        <img src="/assets/preview6-small.webp" data-large="/assets/preview6-large.webp" alt="Preview 6">
-      </div>
-
-      <a href="https://cozyfai.gumroad.com/l/cozy-home-vibes-coloring-pack" class="pack-btn">
-        View the 6-page pack
+      <a href="/assets/cozyfai-coloring-page-free-sample.pdf" class="download-btn" download id="manualDownload">
+        Download manually if it didn't start
       </a>
+
+      <p class="small-text">
+        We've also sent a copy to your email 🌿
+      </p>
+
+      <div class="upsell">
+        <h2>✨ Want more cozy designs?</h2>
+        <p>Check out our 6-page printable pack.</p>
+
+        <div class="preview-grid">
+          <img src="/assets/preview1-small.webp" data-large="/assets/preview1-large.webp" alt="Preview 1">
+          <img src="/assets/preview2-small.webp" data-large="/assets/preview2-large.webp" alt="Preview 2">
+          <img src="/assets/preview3-small.webp" data-large="/assets/preview3-large.webp" alt="Preview 3">
+          <img src="/assets/preview4-small.webp" data-large="/assets/preview4-large.webp" alt="Preview 4">
+          <img src="/assets/preview5-small.webp" data-large="/assets/preview5-large.webp" alt="Preview 5">
+          <img src="/assets/preview6-small.webp" data-large="/assets/preview6-large.webp" alt="Preview 6">
+        </div>
+
+        <a href="https://cozyfai.gumroad.com/l/cozy-home-vibes-coloring-pack" class="pack-btn">
+          View the full pack
+        </a>
+      </div>
     </div>
   </div>
   
@@ -193,6 +221,7 @@
   </div>
 
   <script>
+    /* Mismo script de lightbox (mantener igual) */
     const previews = document.querySelectorAll(".preview-grid img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
