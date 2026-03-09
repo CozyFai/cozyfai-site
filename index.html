@@ -21,7 +21,7 @@ body {
 
 .site-header {
   background-color: #e9e0d3;
-  padding: 10px 0; /* Más compacto */
+  padding: 10px 0;
   border-bottom: 1px solid #e2d8c9;
   text-align: center;
 }
@@ -30,6 +30,7 @@ body {
   height: 20px;
 }
 
+/* --- ESTILOS PARA PC (ESCRITORIO) --- */
 .hero {
   display: flex;
   align-items: center;
@@ -103,7 +104,6 @@ body {
   transition: 0.2s;
 }
 
-/* SECCIÓN PREVIEW */
 .preview-section {
   text-align: center;
   padding: 40px 0;
@@ -128,17 +128,17 @@ footer {
   font-size: 13px;
 }
 
-/* --- OPTIMIZACIÓN EXTREMA PARA MÓVIL (PINTEREST BROWSER) --- */
+/* --- OPTIMIZACIÓN ESPECÍFICA PARA MÓVIL (PINTEREST BROWSER) --- */
 @media (max-width: 900px) {
   .hero {
-    flex-direction: column-reverse; /* Formulario arriba */
+    flex-direction: column-reverse; /* Formulario ARRIBA */
     text-align: center;
-    padding: 15px 0; /* Menos espacio arriba */
+    padding: 15px 0;
     gap: 15px;
   }
 
   .hero-text h1 {
-    font-size: 28px; /* Reducido para ahorrar altura */
+    font-size: 28px;
     margin-bottom: 8px;
   }
 
@@ -146,7 +146,7 @@ footer {
     font-size: 22px;
   }
 
-  /* Ocultamos textos descriptivos en móvil para que el botón suba al primer viewport */
+  /* Ocultamos textos para que el formulario sea visible de entrada */
   .cta-block p, .benefits-title, .benefits {
     display: none; 
   }
@@ -162,17 +162,12 @@ footer {
     gap: 8px;
   }
 
-  .form-box input {
-    padding: 12px; /* Más bajo */
-  }
+  .form-box input { padding: 12px; }
+  .form-box button { padding: 14px; font-size: 16px; }
 
-  .form-box button {
-    padding: 14px; /* Más bajo */
-    font-size: 16px;
-  }
-
+  /* AJUSTE SOLICITADO: Imagen más grande hacia los bordes en móviles */
   .hero-image {
-    width: 80%; /* Imagen más pequeña para que no empuje todo hacia abajo */
+    width: 95%; /* Ahora ocupa casi todo el ancho lateral */
     margin: 0 auto;
   }
 }
