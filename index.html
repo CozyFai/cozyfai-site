@@ -89,9 +89,9 @@ body {
   padding: 15px;
   border-radius: 12px;
   border: 1px solid #ddd;
-  font-size: 16px; /* Mínimo 16px para evitar zoom automático en iOS */
+  font-size: 16px; 
   width: 100%;
-  box-sizing: border-box; /* Para que el padding no desborde el ancho */
+  box-sizing: border-box; 
 }
 
 .form-box button {
@@ -130,17 +130,19 @@ footer {
   font-size: 13px;
 }
 
+/* Estilo del texto de urgencia */
 .urgency-text {
-  font-size: 13px;
-  color: #666;
-  margin: 5px 0;
+  font-size: 14px;
+  color: #d9534f; /* Un tono rojizo suave para llamar la atención */
+  margin: 2px 0 8px 0;
   font-style: italic;
+  font-weight: bold;
 }
 
-/* --- OPTIMIZACIÓN ESPECÍFICA PARA MÓVIL (PINTEREST BROWSER) --- */
+/* --- OPTIMIZACIÓN ESPECÍFICA PARA MÓVIL --- */
 @media (max-width: 900px) {
   .hero {
-    flex-direction: column-reverse; /* Formulario ARRIBA */
+    flex-direction: column-reverse; 
     text-align: center;
     padding: 15px 0;
     gap: 15px;
@@ -155,9 +157,18 @@ footer {
     font-size: 22px;
   }
 
-  /* Ocultamos textos para que el formulario sea visible de entrada */
-  .cta-block p, .benefits-title, .benefits {
+  /* MODIFICACIÓN AQUÍ: Ocultamos párrafos informativos EXCEPTO el de urgencia */
+  .cta-block > p:not(.urgency-text), 
+  .benefits-title, 
+  .benefits {
     display: none; 
+  }
+
+  /* Aseguramos que el texto de urgencia se vea bien en móvil */
+  .urgency-text {
+    display: block !important;
+    font-size: 13px;
+    margin-bottom: 5px;
   }
 
   .cta-block {
@@ -168,15 +179,14 @@ footer {
   .form-box {
     margin: 0 auto;
     width: 100%;
-    gap: 8px;
+    gap: 5px;
   }
 
   .form-box input { padding: 12px; }
   .form-box button { padding: 14px; font-size: 16px; }
 
-  /* AJUSTE SOLICITADO: Imagen más grande hacia los bordes en móviles */
   .hero-image {
-    width: 95%; /* Ahora ocupa casi todo el ancho lateral */
+    width: 95%; 
     margin: 0 auto;
   }
 }
