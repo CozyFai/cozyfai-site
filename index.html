@@ -108,14 +108,14 @@ body {
 
 .preview-section {
   text-align: center;
-  padding: 20px 0 40px 0; /* Espaciado superior reducido de 40px a 20px */
+  padding: 20px 0 40px 0;
   background-color: #fffaf5;
   border-radius: 30px;
   margin-bottom: 30px;
 }
 
 .preview-section h2 { 
-  font-size: 42px; /* Mismo tamaño que H1 en escritorio */
+  font-size: 42px;
   margin: 0 0 20px 0; 
   color: #2c2c2c;
 }
@@ -140,12 +140,12 @@ footer {
     flex-direction: column-reverse; 
     text-align: center;
     padding: 10px 0; 
-    gap: 10px;
+    gap: 8px; /* Gap reducido para ahorrar espacio vertical */
   }
 
   .hero-text h1 {
     font-size: 22px; 
-    margin-bottom: 5px;
+    margin-bottom: 3px; /* Margen reducido */
     white-space: nowrap; 
   }
 
@@ -161,25 +161,24 @@ footer {
   .form-box {
     margin: 0 auto;
     width: 100%;
-    gap: 8px;
+    gap: 6px; /* Gap reducido en el formulario */
   }
 
-  .form-box input { padding: 12px; font-size: 16px; }
-  .form-box button { padding: 14px; font-size: 16px; }
+  .form-box input { padding: 10px; font-size: 16px; } /* Input más compacto */
+  .form-box button { padding: 12px; font-size: 16px; } /* Botón más compacto */
 
   .hero-image {
-    width: 75%; 
+    width: 85%; /* INCREMENTADO del 75% al 85% para un dibujo más grande */
     margin: 0 auto;
   }
 
-  /* Ajuste para que el h2 sea igual al h1 en móvil y esté más arriba */
   .preview-section {
-    padding-top: 10px; /* Sube la sección más arriba */
+    padding-top: 10px;
     margin-top: 10px;
   }
 
   .preview-section h2 {
-    font-size: 22px; /* Mismo tamaño que h1 en móvil */
+    font-size: 22px;
     margin-bottom: 15px;
   }
 }
