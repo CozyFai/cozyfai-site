@@ -130,45 +130,28 @@ footer {
   font-size: 13px;
 }
 
-/* Estilo del texto de urgencia */
-.urgency-text {
-  font-size: 14px;
-  color: #d9534f; /* Un tono rojizo suave para llamar la atención */
-  margin: 2px 0 8px 0;
-  font-style: italic;
-  font-weight: bold;
-}
-
 /* --- OPTIMIZACIÓN ESPECÍFICA PARA MÓVIL --- */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column-reverse; 
     text-align: center;
-    padding: 15px 0;
-    gap: 15px;
+    padding: 10px 0; /* Más apretado */
+    gap: 10px;
   }
 
   .hero-text h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
+    font-size: 22px; /* Reducido para que entre en un renglón */
+    margin-bottom: 5px;
+    white-space: nowrap; /* Fuerza una sola línea */
   }
 
   .hero-text h1 span {
-    font-size: 22px;
+    font-size: 18px;
+    white-space: normal;
   }
 
-  /* MODIFICACIÓN AQUÍ: Ocultamos párrafos informativos EXCEPTO el de urgencia */
-  .cta-block > p:not(.urgency-text), 
-  .benefits-title, 
-  .benefits {
+  .cta-block p, .benefits-title, .benefits {
     display: none; 
-  }
-
-  /* Aseguramos que el texto de urgencia se vea bien en móvil */
-  .urgency-text {
-    display: block !important;
-    font-size: 13px;
-    margin-bottom: 5px;
   }
 
   .cta-block {
@@ -179,14 +162,14 @@ footer {
   .form-box {
     margin: 0 auto;
     width: 100%;
-    gap: 5px;
+    gap: 8px;
   }
 
-  .form-box input { padding: 12px; }
+  .form-box input { padding: 12px; font-size: 16px; }
   .form-box button { padding: 14px; font-size: 16px; }
 
   .hero-image {
-    width: 95%; 
+    width: 75%; /* Achicada para que suba el contenido */
     margin: 0 auto;
   }
 }
@@ -210,7 +193,6 @@ footer {
 
       <div class="cta-block">
         <p>High resolution printable lineart. Instant delivery to your inbox.</p>
-        
         <p class="benefits-title">Your download includes:</p>
         <ul class="benefits">
           <li>High resolution printable PDF</li>
@@ -225,7 +207,6 @@ footer {
             autocomplete="email" 
             inputmode="email"
           >
-          <p class="urgency-text">Free for a limited time! Get yours now ⏳</p>
           <button type="submit">GET IT FREE</button>
         </form>
       </div>
