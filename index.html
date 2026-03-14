@@ -108,13 +108,17 @@ body {
 
 .preview-section {
   text-align: center;
-  padding: 40px 0;
+  padding: 20px 0 40px 0; /* Espaciado superior reducido de 40px a 20px */
   background-color: #fffaf5;
   border-radius: 30px;
   margin-bottom: 30px;
 }
 
-.preview-section h2 { font-size: 28px; margin-bottom: 20px; }
+.preview-section h2 { 
+  font-size: 42px; /* Mismo tamaño que H1 en escritorio */
+  margin: 0 0 20px 0; 
+  color: #2c2c2c;
+}
 
 .preview-image img {
   width: 100%;
@@ -135,14 +139,14 @@ footer {
   .hero {
     flex-direction: column-reverse; 
     text-align: center;
-    padding: 10px 0; /* Más apretado */
+    padding: 10px 0; 
     gap: 10px;
   }
 
   .hero-text h1 {
-    font-size: 22px; /* Reducido para que entre en un renglón */
+    font-size: 22px; 
     margin-bottom: 5px;
-    white-space: nowrap; /* Fuerza una sola línea */
+    white-space: nowrap; 
   }
 
   .hero-text h1 span {
@@ -152,11 +156,6 @@ footer {
 
   .cta-block p, .benefits-title, .benefits {
     display: none; 
-  }
-
-  .cta-block {
-    margin: 0 auto;
-    width: 100%;
   }
 
   .form-box {
@@ -169,8 +168,19 @@ footer {
   .form-box button { padding: 14px; font-size: 16px; }
 
   .hero-image {
-    width: 75%; /* Achicada para que suba el contenido */
+    width: 75%; 
     margin: 0 auto;
+  }
+
+  /* Ajuste para que el h2 sea igual al h1 en móvil y esté más arriba */
+  .preview-section {
+    padding-top: 10px; /* Sube la sección más arriba */
+    margin-top: 10px;
+  }
+
+  .preview-section h2 {
+    font-size: 22px; /* Mismo tamaño que h1 en móvil */
+    margin-bottom: 15px;
   }
 }
 </style>
